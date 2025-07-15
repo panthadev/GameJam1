@@ -1,14 +1,16 @@
 import pygame
-import numpy
-import random
+import effects
 
 pygame.init()
-screen_width = 1075
-screen_height = 540
+screen_width = 600
+screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 clock = pygame.time.Clock()
 running = True
 
+
+
+noise = effects.Ring(screen, (300, 200), 50, 5, (0,0,0), 1)
 
 while running:
     # poll for events
@@ -16,13 +18,15 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-
-
-    
+        
+        
+       
+                
 
     # RENDER YOUR GAME HERE
 
     screen.fill("white")
+    noise.update()
 
    
 
